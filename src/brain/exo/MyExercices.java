@@ -1,4 +1,4 @@
-package brain;
+package brain.exo;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 
 /**
  *
- * @author Moses Brain
+ * @author  Brain
  */
 public class MyExercices {
 

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package brain;
+package brain.exo;
 
 import java.util.Vector;
 
 /**
  *
- * @author Moses Brain
+ * @author  Brain
  */
 public class Vecteur {
 
