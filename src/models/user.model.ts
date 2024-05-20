@@ -8,4 +8,4 @@ const userSchema = new Schema({
   email: { type: String, required: true },
 });
 
-export const Email = model("Email", userSchema);
+export const User = model("User", userSchema);
