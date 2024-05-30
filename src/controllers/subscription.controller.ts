@@ -6,9 +6,17 @@ export const subscribe = async (req: Request, res: Response) => {
   const { name, email } = req.body;
 
   try {
+    // check if the user is already subscribed
+    const foundUser = await User.findOne({ email });
+
+    if (foundUser) {
+      return res.status(409).json({ message: "Already subscribed!" });
+    }
+
     // create and save the new user
     const newUser = new User({ name, email });
-    await newUser.save();
+    console.log("newUser", newUser);
+    const saved = await newUser.save();
 
     // count emails
     const count = await User.countDocuments();
@@ -17,18 +25,8 @@ export const subscribe = async (req: Request, res: Response) => {
 
     // send message
     await sendTelegramMessage(message);
-    res.status(201).json({ message: "Subscribed successfully", count });
+    return res.status(201).json({ message: "Subscribed successfully", count });
   } catch (error: unknown) {
-    if (error instanceof Error && "code" in error) {
-      const mongoError = error as { code: number };
-      if (mongoError.code === 11000) {
-        // Duplicate key error
-        res.status(400).json({ message: "Email already subscribed" });
-      } else {
-        res.status(500).json({ message: "Internal server error" });
-      }
-    } else {
-      res.status(500).json({ message: "Internal server error" });
-    }
+    return res.status(500).json({ message: "Internal server error" });
   }
 };
