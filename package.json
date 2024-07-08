@@ -1,0 +1,14 @@
+{
+  "name": "subscriptions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bvenceslas/subscriptions-api.git",
+  "author": "bvenceslas <bvenceslas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}

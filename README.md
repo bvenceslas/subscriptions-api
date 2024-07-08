@@ -1,2 +1,3 @@
-# JavaExercices
-Exercices dealing with letters, numerics, vectors
+# subcriptions-api
+
+API built to help users subscribe
