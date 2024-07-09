@@ -1,1 +1,19 @@
-/node_modules/
+# Ignore node_modules
+node_modules/
+
+# Ignore environment variables file
+.env
+
+# Ignore TypeScript build output
+dist/
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore other temporary files
+*.tmp
+*.swp
